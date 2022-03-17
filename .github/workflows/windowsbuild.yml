@@ -1,0 +1,24 @@
+name: Windows Build
+
+on: [push, pull_request]
+
+env:
+  MSVC_VERSION: 2019
+  QT_VERSION: 5.15.2
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: windows-2019
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Download Qt
+      working-directory: ${{runner.workspace}}
+      run: |
+        C:/msys64/usr/bin/wget.exe --progress=dot:giga https://www.vgc.io/releases/qt/qt-$QT_VERSION-msvc${MSVC_VERSION}_64.zip
+        unzip qt-$QT_VERSION-msvc${MSVC_VERSION}_64.zip -d ${{runner.workspace}}
