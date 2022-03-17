@@ -17,38 +17,13 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Print info
-      working-directory: ${{runner.workspace}}
-      shell: pwsh
-      run: pwd
-
-    - name: Print more info
-      working-directory: ${{runner.workspace}}
-      shell: pwsh
-      run: ls
-      
-    - name: Print more info
-      working-directory: ${{runner.workspace}}
-      shell: pwsh
-      run: |
-        $url = "https://www.vgc.io/releases/qt"
-        $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
-        echo $url
-        echo $filename
-      
     - name: Download Qt
       working-directory: ${{runner.workspace}}
       shell: pwsh
       run: |
         $url = "https://www.vgc.io/releases/qt"
-        $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
+        $filename = "test-qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
         echo $url
         echo $filename
         Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
         unzip $filename
-
-    - name: Print more info
-      working-directory: ${{runner.workspace}}
-      shell: pwsh
-      run: ls
-      
