@@ -17,6 +17,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: Print info
+      working-directory: ${{runner.workspace}}
+      shell: pwsh
+      run: pwd
+
+    - name: Print more info
+      working-directory: ${{runner.workspace}}
+      shell: pwsh
+      run: ls
+      
     - name: Download Qt
       working-directory: ${{runner.workspace}}
       shell: pwsh
@@ -25,3 +35,9 @@ jobs:
         pwd
         ls
         unzip DownloadTest.zip -d ${{runner.workspace}}
+
+    - name: Print more info
+      working-directory: ${{runner.workspace}}
+      shell: pwsh
+      run: ls
+      
