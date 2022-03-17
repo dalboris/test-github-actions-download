@@ -27,6 +27,15 @@ jobs:
       shell: pwsh
       run: ls
       
+    - name: Print more info
+      working-directory: ${{runner.workspace}}
+      shell: pwsh
+      run: |
+        $url = "https://www.vgc.io/releases/qt"
+        $filename = "qt-$QT_VERSION-msvc${MSVC_VERSION}_64.zip"
+        echo $url
+        echo $filename
+      
     - name: Download Qt
       working-directory: ${{runner.workspace}}
       shell: pwsh
