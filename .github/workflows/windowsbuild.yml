@@ -31,9 +31,9 @@ jobs:
       working-directory: ${{runner.workspace}}
       shell: pwsh
       run: |
-        $url = https://www.vgc.io/releases/qt/
-        $filename = DownloadTest.zip
-        Invoke-WebRequest -Uri $url/$filename -OutFile $filename
+        $url = "https://www.vgc.io/releases/qt"
+        $filename = "DownloadTest.zip"
+        Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
         unzip $filename
 
     - name: Print more info
