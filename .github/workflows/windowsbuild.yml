@@ -22,4 +22,6 @@ jobs:
       shell: pwsh
       run: |
         Invoke-WebRequest -Uri https://www.vgc.io/releases/qt/DownloadTest.zip
+        pwd
+        ls
         unzip DownloadTest.zip -d ${{runner.workspace}}
