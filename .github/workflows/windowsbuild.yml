@@ -32,7 +32,7 @@ jobs:
       shell: pwsh
       run: |
         $url = "https://www.vgc.io/releases/qt"
-        $filename = "qt-$QT_VERSION-msvc${MSVC_VERSION}_64.zip"
+        $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
         echo $url
         echo $filename
       
@@ -41,7 +41,9 @@ jobs:
       shell: pwsh
       run: |
         $url = "https://www.vgc.io/releases/qt"
-        $filename = "qt-$QT_VERSION-msvc${MSVC_VERSION}_64.zip"
+        $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
+        echo $url
+        echo $filename
         Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
         unzip $filename
 
