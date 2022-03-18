@@ -19,7 +19,9 @@ jobs:
 
     - name: Download Qt
       working-directory: ${{runner.workspace}}
+      shell: pwsh
       run: |
+
         C:/msys64/usr/bin/wget.exe --version
 
         #$url = "https://vgcci.blob.core.windows.net/vgc-ci"
