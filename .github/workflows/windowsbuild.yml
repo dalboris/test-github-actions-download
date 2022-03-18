@@ -22,12 +22,13 @@ jobs:
       shell: pwsh
       run: |
         $url = "https://vgcci.blob.core.windows.net/vgc-ci"
-        $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
+        $dirname = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64"
+        $filename = "$dirname.zip"
         C:/msys64/usr/bin/wget.exe --progress=dot:giga "$url/$filename"
         echo "Unzipping..."
-        unzip -q $filename
+        unzip -q $filename -d $dirname
         echo "Done."
-        echo "Qt5Location=${{runner.workspace}}/$filename" >> ${env:GITHUB_ENV}
+        echo "Qt5Location=${{runner.workspace}}/$dirname" >> ${env:GITHUB_ENV}
 
     - name: Print Qt Location
       working-directory: ${{runner.workspace}}
