@@ -27,13 +27,13 @@ jobs:
         echo "Unzipping..."
         unzip -q $filename
         echo "Done."
-        echo "Qt5Location=${{runner.workspace}}/$filename" >> $GITHUB_ENV
+        echo "Qt5Location=${{runner.workspace}}/$filename" >> ${env:GITHUB_ENV}
 
     - name: Print Qt Location
       working-directory: ${{runner.workspace}}
       run: |
         echo "Qt5Location = $Qt5Location"
-        
+
 # Note: Here is the output of `unzip --help`:
 #
 # UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
