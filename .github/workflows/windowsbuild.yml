@@ -21,7 +21,7 @@ jobs:
       working-directory: ${{runner.workspace}}
       shell: pwsh
       run: |
-        $url = "https://www.vgc.io/releases/qt"
+        $url = "https://vgcci.blob.core.windows.net/vgc-ci"
         $filename = "test-qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
         echo $url
         echo $filename
