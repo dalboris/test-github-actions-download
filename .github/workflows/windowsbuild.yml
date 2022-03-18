@@ -23,7 +23,4 @@ jobs:
       run: |
         $url = "https://vgcci.blob.core.windows.net/vgc-ci"
         $filename = "test-qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
-        echo $url
-        echo $filename
-        Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
-        unzip $filename
+        C:/msys64/usr/bin/wget.exe --progress=dot:giga "$url/$filename"
