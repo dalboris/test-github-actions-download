@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Download Qt
+    - name: Install Qt
       working-directory: ${{runner.workspace}}
       shell: pwsh
       run: |
@@ -29,6 +29,11 @@ jobs:
         echo "Done."
         echo "Qt5Location=${{runner.workspace}}/$filename" >> $GITHUB_ENV
 
+    - name: Print Qt Location
+      working-directory: ${{runner.workspace}}
+      run: |
+        echo "Qt5Location = $Qt5Location"
+        
 # Note: Here is the output of `unzip --help`:
 #
 # UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
