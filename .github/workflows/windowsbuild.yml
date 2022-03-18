@@ -27,6 +27,7 @@ jobs:
         echo "Unzipping..."
         unzip -q $filename
         echo "Done."
+        echo "Qt5Location=${{runner.workspace}}/$filename" >> $GITHUB_ENV
 
 # Note: Here is the output of `unzip --help`:
 #
