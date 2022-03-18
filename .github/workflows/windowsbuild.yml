@@ -24,11 +24,11 @@ jobs:
         $url = "https://vgcci.blob.core.windows.net/vgc-ci"
         $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
         C:/msys64/usr/bin/wget.exe --progress=dot:giga "$url/$filename"
+        echo "Unzipping..."
         unzip -q $filename
+        echo "Done."
 
-
-
-# Note: Here is the output of `unzip --help`
+# Note: Here is the output of `unzip --help`:
 #
 # UnZip 6.00 of 20 April 2009, by Info-ZIP.  Maintained by C. Spieler.  Send
 # bug reports using http://www.info-zip.org/zip-bug.html; see README for details.
