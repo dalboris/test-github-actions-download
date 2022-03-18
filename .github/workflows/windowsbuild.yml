@@ -24,3 +24,4 @@ jobs:
         $url = "https://vgcci.blob.core.windows.net/vgc-ci"
         $filename = "qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
         C:/msys64/usr/bin/wget.exe --progress=dot:giga "$url/$filename"
+        unzip $filename
