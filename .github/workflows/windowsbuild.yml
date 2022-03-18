@@ -19,11 +19,13 @@ jobs:
 
     - name: Download Qt
       working-directory: ${{runner.workspace}}
-      shell: pwsh
       run: |
-        $url = "https://vgcci.blob.core.windows.net/vgc-ci"
-        $filename = "test-qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
-        echo $url
-        echo $filename
-        Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
-        unzip $filename
+        wget --version
+
+
+        #$url = "https://vgcci.blob.core.windows.net/vgc-ci"
+        #$filename = "test-qt-${env:QT_VERSION}-msvc${env:MSVC_VERSION}_64.zip"
+        #echo $url
+        #echo $filename
+        #Invoke-WebRequest -Uri "$url/$filename" -OutFile "$filename"
+        #unzip $filename
