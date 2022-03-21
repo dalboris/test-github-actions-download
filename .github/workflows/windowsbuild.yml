@@ -41,7 +41,7 @@ jobs:
         mkdir build
         cd build
         cmake --version
-        cmake $GITHUB_WORKSPACE -DCMAKE_TOOLCHAIN_FILE=$VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake -G "Visual Studio 16 2019" -A x64 -DQt5_DIR="$Qt5Location/lib/cmake/Qt5"
+        cmake $GITHUB_WORKSPACE -G "Visual Studio 16 2019" -A x64 -DQt5_DIR="$Qt5Location/lib/cmake/Qt5"
 
 # Note: Here is the output of `unzip --help`:
 #
