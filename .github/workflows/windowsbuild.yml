@@ -30,15 +30,6 @@ jobs:
         echo "Done."
         echo "Qt5Location=${{runner.workspace}}/$dirname" >> ${env:GITHUB_ENV}
 
-    - name: Print Qt Location
-      working-directory: ${{runner.workspace}}
-      run: |
-        echo "Qt5Location = $Qt5Location"
-        dir "$Qt5Location"
-        dir "$Qt5Location/lib"
-        dir "$Qt5Location/lib/cmake"
-        dir "$Qt5Location/lib/cmake/Qt5"
-
     - name: Configure
       working-directory: ${{runner.workspace}}
       run: |
